@@ -1,0 +1,62 @@
+// app/api/request-account/route.js
+import { connectToDB } from '../../../utils/database';
+import Request from '../../../models/Request';
+import Data from '../../../models/Data';
+
+export async function POST(req) {
+  const {
+    firstname,
+    middlename,
+    lastname,
+    collegeName,
+    departmentName,
+    staffId,
+    officeName,
+    telephone,
+    email,
+    blockNo,
+    clearanceType,
+  } = await req.json();
+
+  // Check if required fields are missing
+  const requiredFields = ['firstname', 'middlename', 'lastname', 'collegeName', 'departmentName', 
+                           'staffId', 'officeName', 'telephone', 'email', 'blockNo', 'clearanceType'];
+  const missingFields = requiredFields.filter(field => !eval(field));
+
+  if (missingFields.length > 0) {
+    return new Response(JSON.stringify({ message: `Please fill all required fields: ${missingFields.join(', ')}` }), { status: 400 });
+  }
+
+  try {
+    await connectToDB();
+
+    // Check if the staff exists in the 'data' collection
+    const staffMember = await Data.findOne({ firstname, middlename, lastname, staffId });
+
+    if (!staffMember) {
+      return new Response(JSON.stringify({ message: 'Staff information not found in system. Please check details.' }), { status: 404 });
+    }
+
+    // Create the request and save it to the 'requests' collection
+    const newRequest = new Request({
+      firstname,
+      middlename,
+      lastname,
+      collegeName,
+      departmentName,
+      staffId,
+      officeName,
+      telephone,
+      email,
+      blockNo,
+      clearanceType,
+    });
+
+    await newRequest.save();
+
+    return new Response(JSON.stringify({ message: 'Request submitted successfully!' }), { status: 201 });
+  } catch (error) {
+    console.error('Error submitting request:', error);
+    return new Response(JSON.stringify({ message: 'Failed to submit request' }), { status: 500 });
+  }
+}

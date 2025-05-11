@@ -1,0 +1,38 @@
+/* Verification Page Styles */
+.verification-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .valid-certificate {
+    background: #f0fff4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border: 1px solid #c6f6d5;
+  }
+  
+  .invalid-certificate {
+    background: #fff5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border: 1px solid #fed7d7;
+  }
+  
+  .status-approved {
+    color: #38a169;
+    font-weight: bold;
+  }
+  
+  .verification-meta {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #718096;
+  }
