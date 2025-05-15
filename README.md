@@ -1,22 +1,22 @@
-# WKU Employee Clearance Management System (ECMS)
-
-A web-based system developed for Wolkite University to streamline and manage employee clearance processes efficiently.
-
-## 🔧 Tech Stack
-
-- **Frontend:** Next.js, Tailwind CSS, MUI
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB (with Mongoose)
-- **Other Tools:** SWR, Nodemailer, jsPDF, html2canvas
-
-##  Features
-
-- Role-based user accounts: Admin, Academic, and Staff
-- Dynamic approval workflow for Admin and Academic clearances
-- Account request and approval system
-- Email notifications on account approval with credentials
-- Security features: password hashing, password recovery via email
-- PDF generation for clearance certificate with QR verification
-- Admin panel to manage user requests and approval history
-
-##  Project Structure (simplified)
+Employee-Clearance-For-Wolkite-University/
+│
+├── app/                          # Frontend application (Next.js)
+│   ├── admin/                   # Admin panel pages
+│   │   ├── accountreq/         # Account request handling
+│   │   └── clearance/          # Clearance request handling
+│   ├── auth/                   # Authentication pages
+│   ├── staff/                  # Staff dashboard and features
+│   └── api/                    # API route handlers
+│
+├── components/                 # Reusable UI components
+├── context/                    # Global state management (e.g., AuthContext)
+├── hooks/                      # Custom React hooks
+├── models/                     # Mongoose schema definitions
+├── public/                     # Static assets (images, icons, etc.)
+├── socket/                     # Socket.io configuration (if real-time is used)
+├── utils/                      # Utility functions (DB connection, helpers)
+├── validations/                # Input validation logic
+├── styles/                     # Global and page-specific styles (if any)
+├── .env.local                  # Environment variables (local only)
+├── README.md                   # Project documentation
+└── package.json                # Project metadata and dependencies
