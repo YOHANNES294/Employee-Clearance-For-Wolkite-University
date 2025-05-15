@@ -9,7 +9,7 @@ A web-based system developed for Wolkite University to streamline and manage emp
 - **Database:** MongoDB (with Mongoose)
 - **Other Tools:** SWR, Nodemailer, jsPDF, html2canvas
 
-## ✨ Features
+##  Features
 
 - Role-based user accounts: Admin, Academic, and Staff
 - Dynamic approval workflow for Admin and Academic clearances
@@ -19,4 +19,4 @@ A web-based system developed for Wolkite University to streamline and manage emp
 - PDF generation for clearance certificate with QR verification
 - Admin panel to manage user requests and approval history
 
-## 📁 Project Structure (simplified)
+##  Project Structure (simplified)
