@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/app/models/db';
-import Request from '@/app/models/Request';
+import { connectToDB } from '@/utils/database';
+import Request from '@/models/Request';
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    await connectToDB();
     
     const requestData = await req.json();
 

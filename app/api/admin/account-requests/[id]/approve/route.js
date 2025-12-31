@@ -1,6 +1,6 @@
 import { sendRawDecisionEmail } from "@/utils/accountEmail";
 import { connectToDB } from "@/utils/database";
-import AccountRequest from "@/models/accountRequest";
+import AccountRequest from "@/models/RequestAccount";
 
 export async function POST(request, { params }) {
   try {

@@ -1,5 +1,5 @@
 "use client";
-import Announcement from "@/components/user/Announcement";
+import Announcement from "@/components/User/Announcement";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";

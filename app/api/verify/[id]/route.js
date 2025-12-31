@@ -1,6 +1,6 @@
 // app/api/verify/[id]/route.js
-import { connectToDB } from '@utils/database';
-import History from '@models/history';
+import { connectToDB } from '@/utils/database';
+import History from '@/models/history';
 
 export const GET = async (request, { params }) => {
   try {
