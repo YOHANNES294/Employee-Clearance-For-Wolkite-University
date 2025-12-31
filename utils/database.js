@@ -3,6 +3,11 @@ import mongoose from "mongoose";
 let isConnected = false;
 
 export const connectToDB = async () => {
+  // Allow skipping DB connection during static builds (set in Vercel env)
+  if (process.env.SKIP_DB_DURING_BUILD === 'true') {
+    console.log('Skipping DB connection because SKIP_DB_DURING_BUILD=true');
+    return;
+  }
   mongoose.set("strictQuery", true);
   mongoose.set("debug", true);
 
